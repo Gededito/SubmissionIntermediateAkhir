@@ -2,14 +2,11 @@ package com.android.dicodingstoryapp.ui.login
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.Observer
 import com.android.dicodingstoryapp.AuthDummy
 import com.android.dicodingstoryapp.data.repository.StoryRepository
-import com.android.dicodingstoryapp.data.response.login.LoginRequest
 import com.android.dicodingstoryapp.data.response.login.LoginResponse
 import com.android.dicodingstoryapp.utility.Result
 import com.android.dicodingstoryapp.utils.getOrAwaitValue
-import org.junit.Assert
 import org.junit.Assert.*
 import org.junit.Before
 import org.junit.Rule
@@ -66,10 +63,11 @@ class LoginViewModelTest {
 //        }
 //    }
 
+
     @Test
     fun `if login success then return Success`() {
         val expectedLiveData = MutableLiveData<Result<LoginResponse>>()
-        expectedLiveData.value = Result.Success(AuthDummy.provideLoginResponse())
+        expectedLiveData.value = Result.Success(auth)
 
         val expected = expectedLiveData.getOrAwaitValue()
 
