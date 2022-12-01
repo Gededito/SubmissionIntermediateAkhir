@@ -8,7 +8,6 @@ import androidx.paging.LoadStateAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.android.dicodingstoryapp.databinding.LoadingItemBinding
 
-
 class LoadingAdapter (private val retry: () -> Unit): LoadStateAdapter<LoadingAdapter.LoadingStateViewHolder>() {
 
     override fun onCreateViewHolder(
@@ -22,7 +21,6 @@ class LoadingAdapter (private val retry: () -> Unit): LoadStateAdapter<LoadingAd
     override fun onBindViewHolder(holder: LoadingStateViewHolder, loadState: LoadState) {
         holder.bind(loadState)
     }
-
 
     class LoadingStateViewHolder(private val binding: LoadingItemBinding, retry: () -> Unit):
         RecyclerView.ViewHolder(binding.root){

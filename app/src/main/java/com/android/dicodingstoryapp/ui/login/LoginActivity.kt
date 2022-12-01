@@ -26,7 +26,6 @@ class LoginActivity : AppCompatActivity() {
         supportActionBar?.hide()
         setupViewModel()
         setAction()
-
     }
 
     private fun setAction() {
@@ -38,7 +37,6 @@ class LoginActivity : AppCompatActivity() {
             startActivity(Intent(this, RegisterActivity::class.java))
             finish()
         }
-
     }
 
     private fun userLogin() {

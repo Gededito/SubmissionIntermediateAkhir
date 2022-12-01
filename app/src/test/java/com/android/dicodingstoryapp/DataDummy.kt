@@ -8,14 +8,18 @@ object DataDummy {
         return AddStoryResponse(false, "Ok")
     }
 
-    fun storyResponse(): StoryResponse {
-        return StoryResponse(false, "Ok", generateDummyStory())
+    fun storyResponseLocation(): StoryResponse {
+        return StoryResponse(false, "Ok", generateDummyStoryLocation())
     }
 
-    private fun generateDummyStory(): List<StoryResponse.StoryApp> {
+    fun storyListResponse(): StoryResponse {
+        return StoryResponse(false, "Ok", generateDummyStoryList())
+    }
+
+    private fun generateDummyStoryLocation(): List<StoryResponse.StoryApp> {
         val storyList = ArrayList<StoryResponse.StoryApp>()
         for (i in 0..10) {
-            val news = StoryResponse.StoryApp(
+            val story = StoryResponse.StoryApp(
                 "ID",
                 "gede",
                 "desc",
@@ -24,7 +28,24 @@ object DataDummy {
                 -6.1947508,
                 106.4867868
             )
-            storyList.add(news)
+            storyList.add(story)
+        }
+        return storyList
+    }
+
+    fun generateDummyStoryList(): List<StoryResponse.StoryApp>{
+        val storyList = ArrayList<StoryResponse.StoryApp>()
+        for (i in 0..100) {
+            val story = StoryResponse.StoryApp(
+                i.toString(),
+                "name + $i",
+                "desc + $i",
+                "$i",
+                "created + $i",
+                i.toDouble(),
+                i.toDouble()
+            )
+            storyList.add(story)
         }
         return storyList
     }

@@ -6,7 +6,6 @@ import com.android.dicodingstoryapp.data.model.UserModel
 import com.android.dicodingstoryapp.data.repository.StoryRepository
 import okhttp3.MultipartBody
 import okhttp3.RequestBody
-import java.io.File
 
 class AddStoryViewModel(private val storyRepository: StoryRepository): ViewModel() {
 

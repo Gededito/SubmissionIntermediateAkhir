@@ -26,7 +26,7 @@ class MapsViewModelTest {
     @Mock
     private lateinit var repository: StoryRepository
     private lateinit var mapsViewModel: MapsViewModel
-    private val mapResponse = DataDummy.storyResponse()
+    private val mapResponse = DataDummy.storyResponseLocation()
     private val token = ""
 
 

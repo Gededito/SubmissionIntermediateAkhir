@@ -47,7 +47,6 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         mapFragment.getMapAsync(this)
 
         setupViewModel()
-
     }
 
     override fun onMapReady(googleMap: GoogleMap) {
@@ -64,7 +63,6 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
 
         setupStory()
         myLocation()
-
     }
 
     private fun setupViewModel() {

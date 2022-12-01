@@ -8,6 +8,7 @@ import android.text.TextWatcher
 import android.text.method.PasswordTransformationMethod
 import android.util.AttributeSet
 import androidx.appcompat.widget.AppCompatEditText
+import com.android.dicodingstoryapp.R
 
 class PasswordEditText : AppCompatEditText {
 
@@ -45,7 +46,7 @@ class PasswordEditText : AppCompatEditText {
                             null
                         }
                         s.length < 6 -> {
-                            "Password Wajib Lebih Dari 6 Karakter"
+                            resources.getString(R.string.minimum_password)
                         }
                         else -> {
                             null

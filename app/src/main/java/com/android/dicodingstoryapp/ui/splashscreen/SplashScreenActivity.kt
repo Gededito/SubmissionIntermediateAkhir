@@ -20,9 +20,7 @@ class SplashScreenActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash_screen)
-
         supportActionBar?.hide()
-
         handlerLoop()
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
@@ -33,7 +31,6 @@ class SplashScreenActivity : AppCompatActivity() {
                 WindowManager.LayoutParams.FLAG_FULLSCREEN
             )
         }
-
     }
 
     private fun handlerLoop() {

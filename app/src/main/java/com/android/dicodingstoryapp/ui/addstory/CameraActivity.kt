@@ -29,7 +29,6 @@ class CameraActivity : AppCompatActivity() {
 
         supportActionBar?.hide()
         actionButton()
-
     }
 
     private fun actionButton() {

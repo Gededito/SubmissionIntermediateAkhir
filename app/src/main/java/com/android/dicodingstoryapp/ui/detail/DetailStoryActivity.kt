@@ -16,7 +16,6 @@ class DetailStoryActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityDetailStoryBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
         supportActionBar?.title = "Story Detail"
 
         val data = intent.getParcelableExtra<StoryResponse.StoryApp>(EXTRA_DETAIL)
@@ -27,7 +26,6 @@ class DetailStoryActivity : AppCompatActivity() {
             .load(data?.photoUrl)
             .apply(RequestOptions().override(70,70))
             .into(binding.photoDetail)
-
     }
 
     companion object {

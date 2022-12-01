@@ -57,7 +57,6 @@ class MainActivity : AppCompatActivity() {
         }
 
         actionBtn()
-
     }
 
     private fun actionBtn() {
@@ -88,7 +87,6 @@ class MainActivity : AppCompatActivity() {
             storyAdapter.submitData(lifecycle, it)
             showLoading(false)
         }
-
     }
 
     private fun logout() {

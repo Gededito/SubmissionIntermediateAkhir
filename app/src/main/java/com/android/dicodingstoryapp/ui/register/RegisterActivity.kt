@@ -24,7 +24,6 @@ class RegisterActivity : AppCompatActivity() {
         supportActionBar?.hide()
         setupViewModel()
         actionButton()
-
     }
 
     private fun actionButton() {

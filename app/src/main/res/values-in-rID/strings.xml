@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Dicoding Story App</string>
+    <string name="tlEmail">Masukkan email Anda</string>
+    <string name="tlPassword">Masukkan kata sandi Anda</string>
+    <string name="tvName">Nama</string>
+    <string name="tlName">Masukkan nama Anda</string>
+    <string name="email_not_valid">Format email tidak valid</string>
+    <string name="minimum_password">Kata Sandi Minimum 6 Karakter</string>
+    <string name="add_img">Gambar Tambahkan Cerita</string>
+    <string name="img_splash_screen">Gambar Splash Screen</string>
+    <string name="login_title">Login ke Akun Anda</string>
+    <string name="login_sub_title"><font color="#00C988"><b>Login</b></font> Jika Anda sudah memiliki akun.</string>
+    <string name="btn_login">LOGIN</string>
+    <string name="txtRegister">Saya tidak memiliki akun</string>
+    <string name="tvRegister">Daftar</string>
+    <string name="register_title">Buat Akun</string>
+    <string name="register_sub_title"><font color="#00C988"><b>Daftar</b></font> Untuk mulai menggunakan aplikasi</string>
+    <string name="btn_register">DAFTAR</string>
+    <string name="txtLogin">Saya memiliki akun</string>
+    <string name="tvLogin">Login</string>
+    <string name="btn_camera">Kamera</string>
+    <string name="btn_gallery">Album</string>
+    <string name="btn_upload">Unggah</string>
+    <string name="edt_desc">Deskripsi</string>
+    <string name="btn_capture">Tombol Foto</string>
+    <string name="btn_swicth_camera">Tombol Ganti Kamera</string>
+    <string name="photo_detail">Detail Foto</string>
+    <string name="username">Nama Pengguna</string>
+    <string name="description">Deskripsi</string>
+    <string name="btn_add_story">Tambahkan Cerita</string>
+    <string name="btn_maps_story">Peta Cerita</string>
+    <string name="photo_story">Cerita Photo</string>
+    <string name="name">Nama Pengguna</string>
+    <string name="message_error">Waktu Habis</string>
+    <string name="btn_muat_ulang">Muat Ulang</string>
+</resources>

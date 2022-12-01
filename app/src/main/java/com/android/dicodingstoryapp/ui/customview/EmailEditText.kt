@@ -8,6 +8,7 @@ import android.text.TextWatcher
 import android.util.AttributeSet
 import android.util.Patterns
 import androidx.appcompat.widget.AppCompatEditText
+import com.android.dicodingstoryapp.R
 
 class EmailEditText : AppCompatEditText {
 
@@ -42,7 +43,7 @@ class EmailEditText : AppCompatEditText {
                     error = if (s.isEmpty()) {
                         null
                     } else if (!Patterns.EMAIL_ADDRESS.matcher(s).matches()) {
-                        "Format Email tidak Valid"
+                        resources.getString(R.string.email_not_valid)
                     } else {
                         null
                     }
@@ -54,6 +55,5 @@ class EmailEditText : AppCompatEditText {
 
         })
     }
-
 
 }

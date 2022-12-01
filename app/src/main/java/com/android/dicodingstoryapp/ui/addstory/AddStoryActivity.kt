@@ -45,7 +45,6 @@ class AddStoryActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityAddStoryBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
         supportActionBar?.title = "Upload Story"
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         setupViewModel()
@@ -53,7 +52,6 @@ class AddStoryActivity : AppCompatActivity() {
         fusedLocationClient = LocationServices.getFusedLocationProviderClient(this)
 
         actionButton()
-
     }
 
     private fun actionButton() {
@@ -102,14 +100,6 @@ class AddStoryActivity : AppCompatActivity() {
                                     showLoading(false)
                                     Toast.makeText(this, "Upload Story Berhasil", Toast.LENGTH_SHORT).show()
                                     startActivity(Intent(this, MainActivity::class.java))
-
-                                    println("test consolee=====")
-                                    println("token add story$token ")
-                                    println("image$imageMultipart")
-                                    println("deskripsi$description")
-                                    println("lat$lat")
-                                    println("lon$lon")
-
                                     finish()
                                 }
                                 is Result.Loading -> {

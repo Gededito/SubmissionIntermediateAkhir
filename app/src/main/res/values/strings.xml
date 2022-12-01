@@ -1,14 +1,17 @@
 <resources>
     <string name="app_name">Dicoding Story App</string>
 
-    <string name="tvEmail">Email</string>
+    <string name="tvEmail" translatable="false">Email</string>
     <string name="tlEmail">Enter your email</string>
 
-    <string name="tvPassword">Password</string>
+    <string name="tvPassword" translatable="false">Password</string>
     <string name="tlPassword">Enter your password</string>
 
     <string name="tvName">Name</string>
     <string name="tlName">Enter your name</string>
+
+    <string name="email_not_valid">Invalid email format</string>
+    <string name="minimum_password">Minimum Password 6 Characters</string>
 
     <!-- Content Description Img -->
     <string name="add_img">Image Add Story</string>
@@ -32,7 +35,7 @@
     <string name="btn_camera">Camera</string>
     <string name="btn_gallery">Gallery</string>
     <string name="btn_upload">Upload</string>
-    <string name="tmbh_lokasi">Tambah Lokasi</string>
+    <string name="tmbh_lokasi" translatable="false">Tambah Lokasi</string>
     <string name="edt_desc">Description</string>
 
     <!-- Camera -->
@@ -51,5 +54,9 @@
     <!-- Item User -->
     <string name="photo_story">Photo Story</string>
     <string name="name">Username</string>
+
+    <!-- Loading Item -->
+    <string name="message_error">Timeout</string>
+    <string name="btn_muat_ulang">Retry</string>
 
 </resources>
