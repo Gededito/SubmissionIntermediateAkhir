@@ -1,5 +1,7 @@
 package com.android.dicodingstoryapp.ui.login
 
+import android.animation.AnimatorSet
+import android.animation.ObjectAnimator
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -25,6 +27,7 @@ class LoginActivity : AppCompatActivity() {
 
         supportActionBar?.hide()
         setupViewModel()
+        playAnimation()
         setAction()
     }
 
@@ -78,6 +81,51 @@ class LoginActivity : AppCompatActivity() {
             binding.progressCircular.visibility = View.VISIBLE
         } else {
             binding.progressCircular.visibility = View.GONE
+        }
+    }
+
+    private fun playAnimation() {
+
+        // Title
+        val titleLogin = ObjectAnimator.ofFloat(binding.tvLoginTitle, View.ALPHA, 1f).setDuration(500)
+        val subTitleLogin = ObjectAnimator.ofFloat(binding.tvLoginSubTitle, View.ALPHA, 1f).setDuration(500)
+
+        // Email
+        val textEmail = ObjectAnimator.ofFloat(binding.tvEmailUser, View.ALPHA, 1f).setDuration(500)
+        val inputEmail = ObjectAnimator.ofFloat(binding.tlEmailUser, View.ALPHA, 1f).setDuration(500)
+
+        // Password
+        val textPassword = ObjectAnimator.ofFloat(binding.tvPasswordUser, View.ALPHA, 1f).setDuration(500)
+        val inputPassword = ObjectAnimator.ofFloat(binding.tlPasswordUser, View.ALPHA, 1f).setDuration(500)
+
+        // Button
+        val buttonLogin = ObjectAnimator.ofFloat(binding.btnLogin, View.ALPHA, 1f).setDuration(500)
+        val regisLayout = ObjectAnimator.ofFloat(binding.layoutRegister, View.ALPHA, 1f).setDuration(500)
+
+        val title = AnimatorSet().apply {
+            playTogether(titleLogin, subTitleLogin)
+        }
+
+        val email = AnimatorSet().apply {
+            playTogether(textEmail, inputEmail)
+        }
+
+        val password = AnimatorSet().apply {
+            playTogether(textPassword, inputPassword)
+        }
+
+        val button = AnimatorSet().apply {
+            playTogether(buttonLogin, regisLayout)
+        }
+
+        AnimatorSet().apply {
+            playSequentially(
+                title,
+                email,
+                password,
+                button
+            )
+            start()
         }
     }
 
