@@ -1,5 +1,7 @@
 package com.android.dicodingstoryapp.ui.register
 
+import android.animation.AnimatorSet
+import android.animation.ObjectAnimator
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -23,6 +25,7 @@ class RegisterActivity : AppCompatActivity() {
 
         supportActionBar?.hide()
         setupViewModel()
+        playAnimation()
         actionButton()
     }
 
@@ -68,6 +71,61 @@ class RegisterActivity : AppCompatActivity() {
         } else {
             binding.progressCircular.visibility = View.GONE
         }
+    }
+
+    private fun playAnimation() {
+
+        // Title
+        val titleRegister = ObjectAnimator.ofFloat(binding.tvRegisterTitle, View.ALPHA, 1f).setDuration(500)
+        val subTitleRegister = ObjectAnimator.ofFloat(binding.tvRegisterSubTitle, View.ALPHA, 1f).setDuration(500)
+
+        // Name
+        val textName = ObjectAnimator.ofFloat(binding.tvNameUser, View.ALPHA, 1f).setDuration(500)
+        val inputName = ObjectAnimator.ofFloat(binding.tlNameUser, View.ALPHA, 1f).setDuration(500)
+
+        // Email
+        val textEmail = ObjectAnimator.ofFloat(binding.tvEmailUser, View.ALPHA, 1f).setDuration(500)
+        val inputEmail = ObjectAnimator.ofFloat(binding.tlEmailUser, View.ALPHA, 1f).setDuration(500)
+
+        // Password
+        val textPassword = ObjectAnimator.ofFloat(binding.tvPasswordUser, View.ALPHA, 1f).setDuration(500)
+        val inputPassword = ObjectAnimator.ofFloat(binding.tlPasswordUser, View.ALPHA, 1f).setDuration(500)
+
+        // Button
+        val buttonRegister = ObjectAnimator.ofFloat(binding.btnRegister, View.ALPHA, 1f).setDuration(500)
+        val logLayout = ObjectAnimator.ofFloat(binding.layoutLogin, View.ALPHA, 1f).setDuration(500)
+
+        val title = AnimatorSet().apply {
+            playTogether(titleRegister, subTitleRegister)
+        }
+
+        val name = AnimatorSet().apply {
+            playTogether(textName, inputName)
+        }
+
+        val email = AnimatorSet().apply {
+            playTogether(textEmail, inputEmail)
+        }
+
+        val password = AnimatorSet().apply {
+            playTogether(textPassword, inputPassword)
+        }
+
+        val button = AnimatorSet().apply {
+            playTogether(buttonRegister, logLayout)
+        }
+
+        AnimatorSet().apply {
+            playSequentially(
+                name,
+                title,
+                email,
+                password,
+                button
+            )
+            start()
+        }
+
     }
 
 }
