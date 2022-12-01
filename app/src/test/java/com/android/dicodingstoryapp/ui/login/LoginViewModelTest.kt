@@ -35,35 +35,6 @@ class LoginViewModelTest {
         loginViewModel = LoginViewModel(repository)
     }
 
-//    @Test
-//    fun `login with valid credential should set user`() {
-//        val exceptedLog = MutableLiveData<Result<LoginResponse>>()
-//        exceptedLog.value = Result.Success(auth)
-//        `when`(repository.loginUser(authLog.email, password)).thenReturn(exceptedLog)
-//        val actualLog = loginViewModel.loginUser(email, password).getOrAwaitValue()
-//        Assert.assertNotNull(actualLog)
-//        Mockito.verify(repository).loginUser(email, password)
-//        Assert.assertTrue(actualLog is Result.Success<*>)
-//    }
-
-//    @Test
-//    fun `when Get HeadlineNews Should Not Null`() {
-//        val observer = Observer<Result<LoginResponse>> {}
-//        try {
-//            val expectedNews = MutableLiveData<Result<LoginResponse>>()
-//            expectedNews.value = Result.Success(auth)
-//            `when`(repository.loginUser(email, password)).thenReturn(expectedNews)
-//
-//            val actualNews = loginViewModel.loginUser(email,password).observeForever(observer)
-//
-//            Mockito.verify(repository).loginUser(email, password)
-//            Assert.assertNotNull(actualNews)
-//        } finally {
-//            loginViewModel.loginUser(email,password).removeObserver(observer)
-//        }
-//    }
-
-
     @Test
     fun `if login success then return Success`() {
         val expectedLiveData = MutableLiveData<Result<LoginResponse>>()
@@ -90,50 +61,5 @@ class LoginViewModelTest {
         assertTrue(actual is Result.Error)
         assertNotNull(actual)
     }
-
-//    @Test
-//    fun `when Get HeadlineNews Should Not Null and Return Success`() {
-//        val observer = Observer<Result<LoginResponse>> {}
-//        try {
-//            val expectedNews = MutableLiveData<Result<LoginResponse>>()
-//            expectedNews.value = Result.Success(auth)
-//            `when`(repository.loginUser(email, "")).thenReturn(expectedNews)
-//
-//            val actualNews = loginViewModel.loginUser(email,"").observeForever(observer)
-//
-//            Mockito.verify(repository).loginUser(email, "")
-//            Assert.assertNotNull(actualNews)
-//        } finally {
-//            loginViewModel.loginUser(email,"").removeObserver(observer)
-//        }
-//    }
-
-//    @Test
-//    fun `when Get HeadlineNews`() {
-//        val observer = Observer<Result<LoginResponse>> {}
-//        try {
-//            val expectedNews = MutableLiveData<Result<LoginResponse>>()
-//            expectedNews.value = Result.Success(auth)
-//            `when`(repository.loginUser("", "")).thenReturn(expectedNews)
-//
-//            val actualNews = loginViewModel.loginUser("","").observeForever(observer)
-//
-//            Mockito.verify(repository).loginUser("", "")
-//            Assert.assertNotNull(actualNews)
-//        } finally {
-//            loginViewModel.loginUser("","").removeObserver(observer)
-//        }
-//    }
-
-//    @Test
-//    fun `login with not valid credential should set user`() {
-//        val exceptedLog = MutableLiveData<Result<LoginResponse>>()
-//        exceptedLog.value = Result.Success(auth)
-//        `when`(repository.loginUser(email, password)).thenReturn(exceptedLog)
-//        val actualLog = loginViewModel.loginUser(email, password).getOrAwaitValue()
-//        Assert.assertNotNull(actualLog)
-//        Mockito.verify(repository).loginUser(email, password)
-//        Assert.assertTrue(actualLog is Result.Success<*>)
-//    }
 
 }

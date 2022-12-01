@@ -12,10 +12,6 @@ object DataDummy {
         return StoryResponse(false, "Ok", generateDummyStoryLocation())
     }
 
-    fun storyListResponse(): StoryResponse {
-        return StoryResponse(false, "Ok", generateDummyStoryList())
-    }
-
     private fun generateDummyStoryLocation(): List<StoryResponse.StoryApp> {
         val storyList = ArrayList<StoryResponse.StoryApp>()
         for (i in 0..10) {
