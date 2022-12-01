@@ -1,0 +1,22 @@
+1. Pengujian Login View Model :
+a. Ketika pengguna berhasil login
+ - Memastikan bila login berhasil dan mengembalikan Result.Success
+ - Memastikan data tidak null
+b. Ketika pengguna mengalami masalah koneksi
+ - Memastikan live data akan mengembalikan Result.Error
+ - Memastikan data tidak null
+
+2. Pengujian Register ViewModel :
+== Skenario register hampir/atau bahkan sama dengan login viewModel.
+
+3. Pengujian Add Story View Model
+- Memastikan add story data tidak null.
+- Memastikan mengembalikan Result.Success.
+
+4. Pengujian Maps View Model
+- Memastikan bahwa maps mengembalikan Result.Success
+- Nenastikan bahwa maps mengembalika data dengan benar
+
+5. Pengujian Story View Model
+- Memastikan bahwa paging mengeluarkan data dengan benar
+- Memastikan data tidak null
