@@ -19,6 +19,7 @@ import org.junit.Test
 import org.junit.runner.RunWith
 import org.mockito.Mock
 import org.mockito.Mockito
+import org.mockito.Mockito.verify
 import org.mockito.junit.MockitoJUnitRunner
 import java.io.File
 
@@ -56,7 +57,7 @@ class AddStoryViewModelTest {
         Mockito.`when`(repository.storyAdd(token, photo, description, lat, lon)).thenReturn(expectedLiveData)
         val actual = addStoryViewModel.storyAdd(token, photo, description,lat, lon).getOrAwaitValue()
 
-        Mockito.verify(repository).storyAdd(token, photo, description, lat, lon)
+        verify(repository).storyAdd(token, photo, description, lat, lon)
         Assert.assertNotNull(actual)
         Assert.assertTrue(actual is Result.Success)
         Assert.assertEquals(expected, actual)
