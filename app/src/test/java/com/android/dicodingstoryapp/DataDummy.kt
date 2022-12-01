@@ -8,8 +8,12 @@ object DataDummy {
         return AddStoryResponse(false, "Ok")
     }
 
-    fun generateDummyNewsEntity(): List<StoryResponse.StoryApp> {
-        val newsList = ArrayList<StoryResponse.StoryApp>()
+    fun storyResponse(): StoryResponse {
+        return StoryResponse(false, "Ok", generateDummyStory())
+    }
+
+    private fun generateDummyStory(): List<StoryResponse.StoryApp> {
+        val storyList = ArrayList<StoryResponse.StoryApp>()
         for (i in 0..10) {
             val news = StoryResponse.StoryApp(
                 "ID",
@@ -20,9 +24,9 @@ object DataDummy {
                 -6.1947508,
                 106.4867868
             )
-            newsList.add(news)
+            storyList.add(news)
         }
-        return newsList
+        return storyList
     }
 
 }
