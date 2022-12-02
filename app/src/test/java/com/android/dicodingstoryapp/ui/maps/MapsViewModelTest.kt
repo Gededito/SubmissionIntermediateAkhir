@@ -2,8 +2,10 @@ package com.android.dicodingstoryapp.ui.maps
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.Observer
 import com.android.dicodingstoryapp.DataDummy
 import com.android.dicodingstoryapp.data.model.StoryResponse
+import com.android.dicodingstoryapp.data.model.UserModel
 import com.android.dicodingstoryapp.data.repository.StoryRepository
 import com.android.dicodingstoryapp.utility.Result
 import com.android.dicodingstoryapp.utils.getOrAwaitValue
