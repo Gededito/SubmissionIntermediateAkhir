@@ -2,7 +2,6 @@ package com.android.dicodingstoryapp.ui.home
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import androidx.lifecycle.LiveData
-
 import androidx.lifecycle.MutableLiveData
 import androidx.paging.AsyncPagingDataDiffer
 import androidx.paging.PagingData
@@ -11,7 +10,6 @@ import androidx.paging.PagingState
 import androidx.recyclerview.widget.ListUpdateCallback
 import com.android.dicodingstoryapp.DataDummy
 import com.android.dicodingstoryapp.adapter.paging.StoryAdapter
-import com.android.dicodingstoryapp.adapter.paging.StoryPagingSource
 import com.android.dicodingstoryapp.data.model.StoryResponse
 import com.android.dicodingstoryapp.data.repository.StoryRepository
 import com.android.dicodingstoryapp.utils.MainDispatcherRule
@@ -19,15 +17,12 @@ import com.android.dicodingstoryapp.utils.getOrAwaitValue
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.test.runTest
-import org.junit.Assert
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertNotNull
-import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
 import org.mockito.Mock
-import org.mockito.Mockito
 import org.mockito.Mockito.`when`
 import org.mockito.junit.MockitoJUnitRunner
 
@@ -66,7 +61,6 @@ class StoryViewModelTest {
         assertEquals(dummyStory, differ.snapshot())
         assertEquals(dummyStory.size, differ.snapshot().size)
         assertEquals(dummyStory[0].id, differ.snapshot()[0]?.id)
-
     }
 }
 

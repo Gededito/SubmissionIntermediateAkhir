@@ -35,24 +35,6 @@ class RegisterViewModelTest {
         registerViewModel = RegisterViewModel(repository)
     }
 
-//    @Test
-//    fun `when Get HeadlineNews Should Not Null and Return Success`() {
-//        val observer = Observer<Result<RegisterResponse>> {}
-//        try {
-//            val expectedNews = MutableLiveData<Result<RegisterResponse>>()
-//            expectedNews.value = Result.Success(auth)
-//            Mockito.`when`(repository.registerUser(name,email, password)).thenReturn(expectedNews)
-//
-//            val actualNews = registerViewModel.userRegister(name, email,password).observeForever(observer)
-//
-//            Mockito.verify(repository).registerUser(name, email, password)
-//            Assert.assertNotNull(actualNews)
-//        } finally {
-//            registerViewModel.userRegister(name,email,password).removeObserver(observer)
-//        }
-//    }
-
-
     @Test
     fun `when register called from repository it should return Success and not null`() {
         val expected = MutableLiveData<Result<RegisterResponse>>()
