@@ -4,10 +4,12 @@ import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import androidx.lifecycle.MutableLiveData
 import com.android.dicodingstoryapp.DataDummy
 import com.android.dicodingstoryapp.data.model.StoryResponse
+import com.android.dicodingstoryapp.data.model.UserModel
 import com.android.dicodingstoryapp.data.repository.StoryRepository
 import com.android.dicodingstoryapp.utility.Result
 import com.android.dicodingstoryapp.utils.getOrAwaitValue
 import org.junit.Assert
+import org.junit.Assert.assertEquals
 import org.junit.Assert.assertTrue
 import org.junit.Before
 import org.junit.Rule
@@ -47,6 +49,12 @@ class MapsViewModelTest {
         Assert.assertNotNull(actual)
         assertTrue(actual is Result.Success)
         Assert.assertEquals(expected, actual)
+    }
+
+    @Test
+    fun testGetUser() {
+        // Verify that the MapsViewModel returns the expected user data from the repository
+        assertEquals(repository.getUserData(), mapsViewModel.getUser())
     }
 
 }
