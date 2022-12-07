@@ -6,7 +6,6 @@ import com.android.dicodingstoryapp.DataDummy
 import com.android.dicodingstoryapp.data.model.UserModel
 import com.android.dicodingstoryapp.data.repository.StoryRepository
 import com.android.dicodingstoryapp.data.response.addstory.AddStoryResponse
-import com.android.dicodingstoryapp.ui.maps.MapsViewModel
 import com.android.dicodingstoryapp.utility.Result
 import com.android.dicodingstoryapp.utils.getOrAwaitValue
 import okhttp3.MediaType.Companion.toMediaType
