@@ -4,6 +4,7 @@ import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import androidx.lifecycle.MutableLiveData
 import com.android.dicodingstoryapp.DataDummy
 import com.android.dicodingstoryapp.data.model.StoryResponse
+import com.android.dicodingstoryapp.data.model.UserModel
 import com.android.dicodingstoryapp.data.repository.StoryRepository
 import com.android.dicodingstoryapp.utility.Result
 import com.android.dicodingstoryapp.utils.getOrAwaitValue
@@ -16,6 +17,7 @@ import org.junit.Test
 import org.junit.runner.RunWith
 import org.mockito.Mock
 import org.mockito.Mockito.`when`
+import org.mockito.Mockito.mock
 import org.mockito.junit.MockitoJUnitRunner
 
 @RunWith(MockitoJUnitRunner::class)
@@ -52,8 +54,17 @@ class MapsViewModelTest {
 
     @Test
     fun testGetUser() {
-        // Verify that the MapsViewModel returns the expected user data from the repository
-        assertEquals(repository.getUserData(), mapsViewModel.getUser())
+        // when getUserData is called
+        val repository = mock(StoryRepository::class.java)
+        val liveData = MutableLiveData<UserModel>()
+        liveData.value = UserModel("Test", "Ok", true)
+        `when`(repository.getUserData()).thenReturn(liveData)
+
+        // Create a MapsViewModel with the mock repository
+        val viewModel = MapsViewModel(repository)
+
+        // Call getUser and verify that the correct LiveData is returned
+        assertEquals(viewModel.getUser(), liveData)
     }
 
 }
