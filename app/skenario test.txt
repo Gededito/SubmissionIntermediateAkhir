@@ -7,8 +7,8 @@ b. Ketika pengguna mengalami masalah koneksi
  - Memastikan data tidak null
 
 2. Pengujian Register ViewModel :
-a. Ketika pengguna berhasil login
- - Memastikan bila login berhasil dan mengembalikan Result.Success
+a. Ketika pengguna berhasil register
+ - Memastikan bila register berhasil dan mengembalikan Result.Success
  - Memastikan data tidak null
 b. Ketika pengguna mengalami masalah koneksi
  - Memastikan live data akan mengembalikan Result.Error
