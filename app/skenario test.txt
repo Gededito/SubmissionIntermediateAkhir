@@ -27,3 +27,4 @@ b. Ketika pengguna mengalami masalah koneksi
 5. Pengujian Story View Model
 - Memastikan bahwa paging mengeluarkan data dengan benar
 - Memastikan data tidak null
+- Memastikan data user yang ambil sesuai

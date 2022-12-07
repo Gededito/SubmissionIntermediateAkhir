@@ -11,18 +11,22 @@ import androidx.recyclerview.widget.ListUpdateCallback
 import com.android.dicodingstoryapp.DataDummy
 import com.android.dicodingstoryapp.adapter.paging.StoryAdapter
 import com.android.dicodingstoryapp.data.model.StoryResponse
+import com.android.dicodingstoryapp.data.model.UserModel
 import com.android.dicodingstoryapp.data.repository.StoryRepository
+import com.android.dicodingstoryapp.ui.addstory.AddStoryViewModel
 import com.android.dicodingstoryapp.utils.MainDispatcherRule
 import com.android.dicodingstoryapp.utils.getOrAwaitValue
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.test.runTest
+import org.junit.Assert
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertNotNull
 import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
 import org.mockito.Mock
+import org.mockito.Mockito
 import org.mockito.Mockito.`when`
 import org.mockito.junit.MockitoJUnitRunner
 
@@ -62,6 +66,22 @@ class StoryViewModelTest {
         assertEquals(dummyStory.size, differ.snapshot().size)
         assertEquals(dummyStory[0].id, differ.snapshot()[0]?.id)
     }
+
+    @Test
+    fun testGetUser() {
+        // when getUserData is called
+        val repository = Mockito.mock(StoryRepository::class.java)
+        val liveData = MutableLiveData<UserModel>()
+        liveData.value = UserModel("Test", "Ok", true)
+        Mockito.`when`(repository.getUserData()).thenReturn(liveData)
+
+        // Create a MapsViewModel with the mock repository
+        val viewModel = StoryViewModel(repository)
+
+        // Call getUser and verify that the correct LiveData is returned
+        Assert.assertEquals(viewModel.getUser(), liveData)
+    }
+
 }
 
 class StorySource : PagingSource<Int, LiveData<List<StoryResponse.StoryApp>>>() {
