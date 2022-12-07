@@ -3,8 +3,10 @@ package com.android.dicodingstoryapp.ui.addstory
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import androidx.lifecycle.MutableLiveData
 import com.android.dicodingstoryapp.DataDummy
+import com.android.dicodingstoryapp.data.model.UserModel
 import com.android.dicodingstoryapp.data.repository.StoryRepository
 import com.android.dicodingstoryapp.data.response.addstory.AddStoryResponse
+import com.android.dicodingstoryapp.ui.maps.MapsViewModel
 import com.android.dicodingstoryapp.utility.Result
 import com.android.dicodingstoryapp.utils.getOrAwaitValue
 import okhttp3.MediaType.Companion.toMediaType
@@ -61,6 +63,21 @@ class AddStoryViewModelTest {
         Assert.assertNotNull(actual)
         Assert.assertTrue(actual is Result.Success)
         Assert.assertEquals(expected, actual)
+    }
+
+    @Test
+    fun testGetUser() {
+        // when getUserData is called
+        val repository = Mockito.mock(StoryRepository::class.java)
+        val liveData = MutableLiveData<UserModel>()
+        liveData.value = UserModel("Test", "Ok", true)
+        Mockito.`when`(repository.getUserData()).thenReturn(liveData)
+
+        // Create a MapsViewModel with the mock repository
+        val viewModel = AddStoryViewModel(repository)
+
+        // Call getUser and verify that the correct LiveData is returned
+        Assert.assertEquals(viewModel.getUser(), liveData)
     }
 
 }

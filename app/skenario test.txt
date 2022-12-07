@@ -17,11 +17,12 @@ b. Ketika pengguna mengalami masalah koneksi
 3. Pengujian Add Story View Model
 - Memastikan add story data tidak null.
 - Memastikan mengembalikan Result.Success.
+- Memastikan data user yang ambil sesuai
 
 4. Pengujian Maps View Model
 - Memastikan bahwa maps mengembalikan Result.Success
 - Memastikan Maps sesuai dengan yang diharapkan
-- Memastikan data maps user yang ambil sesuai
+- Memastikan data user yang ambil sesuai
 
 5. Pengujian Story View Model
 - Memastikan bahwa paging mengeluarkan data dengan benar
