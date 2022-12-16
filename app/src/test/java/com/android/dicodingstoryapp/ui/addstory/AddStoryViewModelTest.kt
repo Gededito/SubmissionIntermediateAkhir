@@ -14,6 +14,7 @@ import okhttp3.MultipartBody
 import okhttp3.RequestBody.Companion.asRequestBody
 import okhttp3.RequestBody.Companion.toRequestBody
 import org.junit.Assert
+import org.junit.Assert.assertEquals
 import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
@@ -61,22 +62,19 @@ class AddStoryViewModelTest {
         verify(repository).storyAdd(token, photo, description, lat, lon)
         Assert.assertNotNull(actual)
         Assert.assertTrue(actual is Result.Success)
-        Assert.assertEquals(expected, actual)
+        assertEquals(expected, actual)
     }
 
     @Test
-    fun testGetUser() {
-        // when getUserData is called
-        val repository = Mockito.mock(StoryRepository::class.java)
-        val liveData = MutableLiveData<UserModel>()
-        liveData.value = UserModel("Test", "Ok", true)
-        Mockito.`when`(repository.getUserData()).thenReturn(liveData)
+    fun `test get user`(){
+        val storyRepository = Mockito.mock(StoryRepository::class.java)
+        val expectedLiveData = MutableLiveData<UserModel>()
+        expectedLiveData.value = UserModel("tri", "abcd", true)
 
-        // Create a MapsViewModel with the mock repository
-        val viewModel = AddStoryViewModel(repository)
-
-        // Call getUser and verify that the correct LiveData is returned
-        Assert.assertEquals(viewModel.getUser(), liveData)
+        Mockito.`when`(storyRepository.getUserData()).thenReturn(expectedLiveData)
+        val viewModel = AddStoryViewModel(storyRepository)
+        Assert.assertNotNull(viewModel)
+        assertEquals(viewModel.getUser(), expectedLiveData)
     }
 
 }

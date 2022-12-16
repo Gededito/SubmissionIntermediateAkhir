@@ -16,6 +16,7 @@ import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
 import org.mockito.Mock
+import org.mockito.Mockito
 import org.mockito.Mockito.`when`
 import org.mockito.Mockito.mock
 import org.mockito.junit.MockitoJUnitRunner
@@ -53,18 +54,15 @@ class MapsViewModelTest {
     }
 
     @Test
-    fun testGetUser() {
-        // when getUserData is called
-        val repository = mock(StoryRepository::class.java)
-        val liveData = MutableLiveData<UserModel>()
-        liveData.value = UserModel("Test", "Ok", true)
-        `when`(repository.getUserData()).thenReturn(liveData)
+    fun `test get user`(){
+        val storyRepository = mock(StoryRepository::class.java)
+        val expectedLiveData = MutableLiveData<UserModel>()
+        expectedLiveData.value = UserModel("tri", "abcd", true)
 
-        // Create a MapsViewModel with the mock repository
-        val viewModel = MapsViewModel(repository)
-
-        // Call getUser and verify that the correct LiveData is returned
-        assertEquals(viewModel.getUser(), liveData)
+        `when`(storyRepository.getUserData()).thenReturn(expectedLiveData)
+        val viewModel = MapsViewModel(storyRepository)
+        Assert.assertNotNull(viewModel)
+        assertEquals(viewModel.getUser(), expectedLiveData)
     }
 
 }

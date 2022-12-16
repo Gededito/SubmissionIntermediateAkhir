@@ -18,8 +18,7 @@ import com.android.dicodingstoryapp.utils.getOrAwaitValue
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.test.runTest
-import org.junit.Assert.assertEquals
-import org.junit.Assert.assertNotNull
+import org.junit.Assert.*
 import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
@@ -66,18 +65,15 @@ class StoryViewModelTest {
     }
 
     @Test
-    fun testGetUser() {
-        // when getUserData is called
-        val repository = Mockito.mock(StoryRepository::class.java)
-        val liveData = MutableLiveData<UserModel>()
-        liveData.value = UserModel("Test", "Ok", true)
-        `when`(repository.getUserData()).thenReturn(liveData)
+    fun `test get user`(){
+        val storyRepository = Mockito.mock(StoryRepository::class.java)
+        val expectedLiveData = MutableLiveData<UserModel>()
+        expectedLiveData.value = UserModel("tri", "abcd", true)
 
-        // Create a MapsViewModel with the mock repository
-        val viewModel = StoryViewModel(repository)
-
-        // Call getUser and verify that the correct LiveData is returned
-        assertEquals(viewModel.getUser(), liveData)
+        `when`(storyRepository.getUserData()).thenReturn(expectedLiveData)
+        val viewModel = StoryViewModel(storyRepository)
+        assertNotNull(viewModel)
+        assertEquals(viewModel.getUser(), expectedLiveData)
     }
 
 }

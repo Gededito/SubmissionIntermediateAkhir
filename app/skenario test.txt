@@ -1,10 +1,10 @@
 1. Pengujian Login View Model :
-a. Ketika pengguna berhasil login
- - Memastikan bila login berhasil dan mengembalikan Result.Success
- - Memastikan data tidak null
-b. Ketika pengguna mengalami masalah koneksi
- - Memastikan live data akan mengembalikan Result.Error
- - Memastikan data tidak null
+    - Memastikan data tidak null
+    - Memastikan saat berhasil login dan mengembalikan Result.Success
+    - Memastikan data dugaan sesuai dengan yang diharapkan
+    - Memastikan mengembalikan Result.Error
+    - Memastikan fungsi saveUser() pada repository terpanggil
+    - Memastikan sukses logout
 
 2. Pengujian Register ViewModel :
 a. Ketika pengguna berhasil register
@@ -17,14 +17,14 @@ b. Ketika pengguna mengalami masalah koneksi
 3. Pengujian Add Story View Model
 - Memastikan add story data tidak null.
 - Memastikan mengembalikan Result.Success.
-- Memastikan data user yang ambil sesuai
+- Memastikan data yang dikembalikan sesuai yang diharapkan
 
 4. Pengujian Maps View Model
 - Memastikan bahwa maps mengembalikan Result.Success
 - Memastikan Maps sesuai dengan yang diharapkan
-- Memastikan data user yang ambil sesuai
+- Memastikan data yang dikembalikan sesuai yang diharapkan
 
 5. Pengujian Story View Model
 - Memastikan bahwa paging mengeluarkan data dengan benar
 - Memastikan data tidak null
-- Memastikan data user yang ambil sesuai
+- Memastikan data yang dikembalikan sesuai yang diharapkan

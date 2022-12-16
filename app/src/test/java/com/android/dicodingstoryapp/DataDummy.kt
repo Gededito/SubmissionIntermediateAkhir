@@ -1,6 +1,7 @@
 package com.android.dicodingstoryapp
 
 import com.android.dicodingstoryapp.data.model.StoryResponse
+import com.android.dicodingstoryapp.data.model.UserModel
 import com.android.dicodingstoryapp.data.response.addstory.AddStoryResponse
 
 object DataDummy {
@@ -44,6 +45,14 @@ object DataDummy {
             storyList.add(story)
         }
         return storyList
+    }
+
+    fun generateDummyLoginUser(): UserModel{
+        return UserModel(
+            "tri",
+            "abcd",
+            true
+        )
     }
 
 }
