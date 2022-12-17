@@ -18,6 +18,7 @@ import com.android.dicodingstoryapp.utils.getOrAwaitValue
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.test.runTest
+import org.junit.Assert
 import org.junit.Assert.*
 import org.junit.Rule
 import org.junit.Test
@@ -72,8 +73,10 @@ class StoryViewModelTest {
 
         `when`(storyRepository.getUserData()).thenReturn(expectedLiveData)
         val viewModel = StoryViewModel(storyRepository)
-        assertNotNull(viewModel)
-        assertEquals(viewModel.getUser(), expectedLiveData)
+        val actualResult = viewModel.getUser().getOrAwaitValue()
+        Assert.assertNotNull(actualResult)
+        assertEquals(actualResult, expectedLiveData.value)
+        assertEquals(actualResult.name, expectedLiveData.value?.name)
     }
 
 }

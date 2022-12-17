@@ -55,14 +55,16 @@ class MapsViewModelTest {
 
     @Test
     fun `test get user`(){
-        val storyRepository = mock(StoryRepository::class.java)
+        val storyRepository = Mockito.mock(StoryRepository::class.java)
         val expectedLiveData = MutableLiveData<UserModel>()
         expectedLiveData.value = UserModel("tri", "abcd", true)
 
         `when`(storyRepository.getUserData()).thenReturn(expectedLiveData)
         val viewModel = MapsViewModel(storyRepository)
-        Assert.assertNotNull(viewModel)
-        assertEquals(viewModel.getUser(), expectedLiveData)
+        val actualResult = viewModel.getUser().getOrAwaitValue()
+        Assert.assertNotNull(actualResult)
+        assertEquals(actualResult, expectedLiveData.value)
+        assertEquals(actualResult.name, expectedLiveData.value?.name)
     }
 
 }
