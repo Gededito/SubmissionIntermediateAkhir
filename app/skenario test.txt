@@ -1,13 +1,21 @@
 1. Pengujian Login View Model :
-    - Memastikan data tidak null
-    - Memastikan saat berhasil login dan mengembalikan Result.Success
-    - Memastikan data dugaan sesuai dengan yang diharapkan
-    - Memastikan mengembalikan Result.Error
-    - Memastikan fungsi saveUser() pada repository terpanggil
-    - Memastikan sukses logout
+a. Ketika pengguna berhasil login
+ - Memastikan bila login berhasil dan mengembalikan Result.Success
+ - Memastikan bahwa nilai actual tidak null
+ - Memastikan Function login user terpanggil
+b. Ketika pengguna mengalami masalah koneksi
+ - Memastikan live data akan mengembalikan Result.Error
+ - Memastikan bahwa nilai actual tidak null
+ - Memastikan Function login user terpanggil
+c. Ketika user berhasil login dan data disimpan
+ - Menjalankan fungsi save user dengan data dummy sesuai dengan yang diharapkan
+ - Memastikan fungsi saveUser() pada repository terpanggil
+d. Ketika user melakukan logout
+ - Menjalankan fungsi logout pada login view model
+ - Memastikan fungsi logout() pada repository terpanggil
 
 2. Pengujian Register ViewModel :
-a. Ketika pengguna berhasil register
+a. Ketika pengguna berhasil register dan tidak terdapat null
  - Memastikan bila register berhasil dan mengembalikan Result.Success
  - Memastikan data tidak null
 b. Ketika pengguna mengalami masalah koneksi
@@ -15,16 +23,40 @@ b. Ketika pengguna mengalami masalah koneksi
  - Memastikan data tidak null
 
 3. Pengujian Add Story View Model
-- Memastikan add story data tidak null.
-- Memastikan mengembalikan Result.Success.
-- Memastikan data yang dikembalikan sesuai yang diharapkan
+a. Ketika Menambahkan Story Sudah Success :
+ - Memastikan bahwa nilai actual tidak null
+ - Memastikan bila add story berhasil dan mengembalikan Result.Success
+ - Memastikan Function storyAdd pada repository terpanggil
+b. Ketika get user :
+ - Memastikan mengambil data user sesuai dengan data dummy
+ - Memastikan data respon sebenarnya yang dikembalikan sesuai dengan data respon yang diharapkan
+ - Memastikan nama dalam data respon sebenarnya yang dikembalikan sesuai dengan nama dalam data respon yang dharapkan
+ - Memastikan token dalam data respon sebenarnya yang dikembalikan sesuai dengan token dalam data respon yang diharapkan
+ - Memastikan login dalam data respon sebenarnya yang dikembalikan sesuai dengan login dalam data respon yang diharapkan
 
 4. Pengujian Maps View Model
-- Memastikan bahwa maps mengembalikan Result.Success
-- Memastikan Maps sesuai dengan yang diharapkan
-- Memastikan data yang dikembalikan sesuai yang diharapkan
+a. Ketika Map Berhasil :
+ - Memastikan bahwa nilai actual tidak null
+ - Memastikan bahwa maps mengembalikan Result.Success
+ - Memastikan mengembalikan data sesuai dengan data dummy
+b. Ketika Map Error :
+ - Memastikan bahwa nilai actualResponse tidak null
+ - Memastikkan Function getLocationStory terpanggil
+ - Memastikan bahwa masp mengembalikan Result.Error
+c. Ketika get user :
+ - Memastikan mengambil data user sesuai dengan data dummy
+ - Memastikan data respon sebenarnya yang dikembalikan sesuai dengan data respon yang diharapkan
+ - Memastikan nama dalam data respon sebenarnya yang dikembalikan sesuai dengan nama dalam data respon yang dharapkan
+ - Memastikan token dalam data respon sebenarnya yang dikembalikan sesuai dengan token dalam data respon yang diharapkan
+ - Memastikan login dalam data respon sebenarnya yang dikembalikan sesuai dengan login dalam data respon yang diharapkan
 
 5. Pengujian Story View Model
-- Memastikan bahwa paging mengeluarkan data dengan benar
-- Memastikan data tidak null
-- Memastikan data yang dikembalikan sesuai yang diharapkan
+a. Ketika berhasil mengambil story user :
+ - Memastikan data tidak null
+ - Memastikan data yang ditampilkan sesuai data dummy
+b. Ketika get user :
+ - Memastikan mengambil data user sesuai dengan data dummy
+ - Memastikan data respon sebenarnya yang dikembalikan sesuai dengan data respon yang diharapkan
+ - Memastikan nama dalam data respon sebenarnya yang dikembalikan sesuai dengan nama dalam data respon yang dharapkan
+ - Memastikan token dalam data respon sebenarnya yang dikembalikan sesuai dengan token dalam data respon yang diharapkan
+ - Memastikan login dalam data respon sebenarnya yang dikembalikan sesuai dengan login dalam data respon yang diharapkan

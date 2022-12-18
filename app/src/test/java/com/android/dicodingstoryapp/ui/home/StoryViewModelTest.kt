@@ -74,7 +74,7 @@ class StoryViewModelTest {
         `when`(storyRepository.getUserData()).thenReturn(expectedLiveData)
         val viewModel = StoryViewModel(storyRepository)
         val actualResult = viewModel.getUser().getOrAwaitValue()
-        Assert.assertNotNull(actualResult)
+        assertNotNull(actualResult)
         assertEquals(actualResult, expectedLiveData.value)
         assertEquals(actualResult.name, expectedLiveData.value?.name)
     }

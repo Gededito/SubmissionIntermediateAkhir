@@ -54,8 +54,22 @@ class MapsViewModelTest {
     }
 
     @Test
+    fun `when get Story Location is Error`() {
+        val expectedResponse = MutableLiveData<Result<StoryResponse>>()
+        expectedResponse.value = Result.Error("error")
+
+        `when`(repository.getLocationStory(token)).thenReturn(expectedResponse)
+
+        val actualResponse = mapsViewModel.getLocationStory(token).getOrAwaitValue()
+
+        Mockito.verify(repository).getLocationStory(token)
+        Assert.assertNotNull(actualResponse)
+        assertTrue(actualResponse is Result.Error)
+    }
+
+    @Test
     fun `test get user`(){
-        val storyRepository = Mockito.mock(StoryRepository::class.java)
+        val storyRepository = mock(StoryRepository::class.java)
         val expectedLiveData = MutableLiveData<UserModel>()
         expectedLiveData.value = UserModel("tri", "abcd", true)
 
