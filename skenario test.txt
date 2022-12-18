@@ -3,15 +3,14 @@ a. Ketika pengguna berhasil login
  - Memastikan bila login berhasil dan mengembalikan Result.Success
  - Memastikan bahwa nilai actual tidak null
  - Memastikan Function login user terpanggil
+ - Memastikan responLogin yang dikembalikan sama dengan responLogin yang diharapkan
 b. Ketika pengguna mengalami masalah koneksi
  - Memastikan live data akan mengembalikan Result.Error
  - Memastikan bahwa nilai actual tidak null
  - Memastikan Function login user terpanggil
 c. Ketika user berhasil login dan data disimpan
- - Menjalankan fungsi save user dengan data dummy sesuai dengan yang diharapkan
  - Memastikan fungsi saveUser() pada repository terpanggil
 d. Ketika user melakukan logout
- - Menjalankan fungsi logout pada login view model
  - Memastikan fungsi logout() pada repository terpanggil
 
 2. Pengujian Register ViewModel :
@@ -27,6 +26,7 @@ a. Ketika Menambahkan Story Sudah Success :
  - Memastikan bahwa nilai actual tidak null
  - Memastikan bila add story berhasil dan mengembalikan Result.Success
  - Memastikan Function storyAdd pada repository terpanggil
+ - Memastikan responAddStory yang dikembalikan sama dengan responAddStory yang diharapkan
 b. Ketika get user :
  - Memastikan mengambil data user sesuai dengan data dummy
  - Memastikan data respon sebenarnya yang dikembalikan sesuai dengan data respon yang diharapkan
