@@ -3,7 +3,7 @@ a. Ketika pengguna berhasil login
  - Memastikan bila login berhasil dan mengembalikan Result.Success
  - Memastikan bahwa nilai actual tidak null
  - Memastikan Function login user terpanggil
- - Memastikan responLogin yang dikembalikan sama dengan responLogin yang diharapkan
+ - Memastikan LoginResponse yang dikembalikan sama dengan LoginResponse yang diharapkan
 b. Ketika pengguna mengalami masalah koneksi
  - Memastikan live data akan mengembalikan Result.Error
  - Memastikan bahwa nilai actual tidak null
@@ -26,7 +26,7 @@ a. Ketika Menambahkan Story Sudah Success :
  - Memastikan bahwa nilai actual tidak null
  - Memastikan bila add story berhasil dan mengembalikan Result.Success
  - Memastikan Function storyAdd pada repository terpanggil
- - Memastikan responAddStory yang dikembalikan sama dengan responAddStory yang diharapkan
+ - Memastikan AddStoryResponse yang dikembalikan sama dengan AddStoryResponse yang diharapkan
 b. Ketika get user :
  - Memastikan mengambil data user sesuai dengan data dummy
  - Memastikan data respon sebenarnya yang dikembalikan sesuai dengan data respon yang diharapkan
