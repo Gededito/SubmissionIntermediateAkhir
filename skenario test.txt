@@ -4,22 +4,30 @@ a. Ketika pengguna berhasil login
  - Memastikan bahwa nilai actual tidak null
  - Memastikan Function login user terpanggil
  - Memastikan LoginResponse yang dikembalikan sama dengan LoginResponse yang diharapkan
+
 b. Ketika pengguna mengalami masalah koneksi
  - Memastikan live data akan mengembalikan Result.Error
  - Memastikan bahwa nilai actual tidak null
  - Memastikan Function login user terpanggil
+
 c. Ketika user berhasil login dan data disimpan
  - Memastikan fungsi saveUser() pada repository terpanggil
+
 d. Ketika user melakukan logout
  - Memastikan fungsi logout() pada repository terpanggil
+
+================================================================================
 
 2. Pengujian Register ViewModel :
 a. Ketika pengguna berhasil register dan tidak terdapat null
  - Memastikan bila register berhasil dan mengembalikan Result.Success
  - Memastikan data tidak null
+
 b. Ketika pengguna mengalami masalah koneksi
  - Memastikan live data akan mengembalikan Result.Error
  - Memastikan data tidak null
+
+=================================================================================
 
 3. Pengujian Add Story View Model
 a. Ketika Menambahkan Story Sudah Success :
@@ -27,35 +35,45 @@ a. Ketika Menambahkan Story Sudah Success :
  - Memastikan bila add story berhasil dan mengembalikan Result.Success
  - Memastikan Function storyAdd pada repository terpanggil
  - Memastikan AddStoryResponse yang dikembalikan sama dengan AddStoryResponse yang diharapkan
+
 b. Ketika get user :
- - Memastikan mengambil data user sesuai dengan data dummy
+ - Memastikan data user tidak null
  - Memastikan data respon sebenarnya yang dikembalikan sesuai dengan data respon yang diharapkan
  - Memastikan nama dalam data respon sebenarnya yang dikembalikan sesuai dengan nama dalam data respon yang dharapkan
  - Memastikan token dalam data respon sebenarnya yang dikembalikan sesuai dengan token dalam data respon yang diharapkan
  - Memastikan login dalam data respon sebenarnya yang dikembalikan sesuai dengan login dalam data respon yang diharapkan
+
+================================================================================================================================
 
 4. Pengujian Maps View Model
 a. Ketika Map Berhasil :
  - Memastikan bahwa nilai actual tidak null
  - Memastikan bahwa maps mengembalikan Result.Success
  - Memastikan mengembalikan data sesuai dengan data dummy
+
 b. Ketika Map Error :
  - Memastikan bahwa nilai actualResponse tidak null
- - Memastikkan Function getLocationStory terpanggil
+ - Memastikan Function getLocationStory terpanggil
  - Memastikan bahwa masp mengembalikan Result.Error
+
 c. Ketika get user :
- - Memastikan mengambil data user sesuai dengan data dummy
+ - Memastikan data user tidak null
  - Memastikan data respon sebenarnya yang dikembalikan sesuai dengan data respon yang diharapkan
  - Memastikan nama dalam data respon sebenarnya yang dikembalikan sesuai dengan nama dalam data respon yang dharapkan
  - Memastikan token dalam data respon sebenarnya yang dikembalikan sesuai dengan token dalam data respon yang diharapkan
  - Memastikan login dalam data respon sebenarnya yang dikembalikan sesuai dengan login dalam data respon yang diharapkan
 
+=============================================================================================================================
+
 5. Pengujian Story View Model
 a. Ketika berhasil mengambil story user :
  - Memastikan data tidak null
  - Memastikan data yang ditampilkan sesuai data dummy
+ - Memastikan ukuran data yang ditampilkan sesuai ukuran data dummy
+ - Memastikan id data pertama yang ditampilkan sesuai dengan id data pertama dummy.
+
 b. Ketika get user :
- - Memastikan mengambil data user sesuai dengan data dummy
+ - Memastikan data user tidak null
  - Memastikan data respon sebenarnya yang dikembalikan sesuai dengan data respon yang diharapkan
  - Memastikan nama dalam data respon sebenarnya yang dikembalikan sesuai dengan nama dalam data respon yang dharapkan
  - Memastikan token dalam data respon sebenarnya yang dikembalikan sesuai dengan token dalam data respon yang diharapkan

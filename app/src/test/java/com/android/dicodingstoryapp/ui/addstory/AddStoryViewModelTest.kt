@@ -74,9 +74,12 @@ class AddStoryViewModelTest {
         Mockito.`when`(storyRepository.getUserData()).thenReturn(expectedLiveData)
         val viewModel = AddStoryViewModel(storyRepository)
         val actualResult = viewModel.getUser().getOrAwaitValue()
+
         Assert.assertNotNull(actualResult)
         assertEquals(actualResult, expectedLiveData.value)
         assertEquals(actualResult.name, expectedLiveData.value?.name)
+        assertEquals(actualResult.token, expectedLiveData.value?.token)
+        assertEquals(actualResult.isLogin, expectedLiveData.value?.isLogin)
     }
 
 }
